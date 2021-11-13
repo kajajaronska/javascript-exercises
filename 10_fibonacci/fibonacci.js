@@ -4,7 +4,7 @@ const fibonacci = function(num) {
     
     let y = +num;
     let x = [0,1];
-
+    
     if(y > 0) {
         for(let i=2; i <= 317811; i++){
             x.push(x[i-1]+x[i-2]);
