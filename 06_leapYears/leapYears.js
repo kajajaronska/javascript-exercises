@@ -1,9 +1,11 @@
 const leapYears = function(year) {
-    if(year % 4 === 0 && year % 100 !== 0) {
-        return true;
-    } else if (year % 400 === 0 && year % 100 === 0){
-        return true;
-    } else {return false;}
+    
+    // if divisible by 100 && divisible by 400 return true 
+    if((year % 100 == 0) && (year % 400 == 0)) return true;
+    // if divisible by 4 && NOT divisible by 100 return true 
+    if ((year % 100 != 0) && (year % 4) == 0) return true;
+    // not divisable by 4 && divisible by 100; 
+    else return false;
 };
 
 

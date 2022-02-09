@@ -1,19 +1,18 @@
 const fibonacci = function(num) {
-    // Fibonacci sequence rule
-    // x[num] = x[num-1] + x[num-2];
-    
+    // Fibonacci rule: x[n] = x[n-1] + x[n-2]
+
+    if(num <= 0) return "OOPS";
+
+    let arr = [0,1];
     let y = +num;
-    let x = [0,1];
-    
-    if(y > 0) {
-        for(let i=2; i <= 317811; i++){
-            x.push(x[i-1]+x[i-2]);
-        };
-        
-        return x[num];
-    } else {
-        return z = "OOPS";
+
+    for(let i = 2; i < 10000000; i++) {
+        arr[i] = arr[i-1] + arr[i-2];
+        arr.push[arr[i]];
     };
+
+    return arr[y];
+
 };
 
 // Do not edit below this line

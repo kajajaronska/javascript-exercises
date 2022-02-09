@@ -1,19 +1,17 @@
 const sumAll = function(start, end) {
-    let sum = 0;
+  let sum = 0;
 
-    if (typeof start != 'number' || typeof end != 'number' || start < 0 || end < 0 ) {
-        return "ERROR"
-    } else if (start < end) {
-        for (let i=start; i <= end; i++) {
-            sum += i
-        }
-    } else {
-        for (let i=start; i >= end; i--) {
-            sum += i
-        }
-    }
+  if (start > end)  {
+    for(current = end; current <= start; current++) {
+      sum = sum + current;
+    };
+  } else if (start < 0 || end < 0 || typeof start != 'number' || typeof end != 'number') return "ERROR";
 
-    return sum;
+  for(current = start; current <= end; current++) {
+    sum = sum + current;
+  };
+
+  return sum; 
 };
 
 // Do not edit below this line

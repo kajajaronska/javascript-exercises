@@ -1,42 +1,21 @@
-const people = [
-    {
-      name: "Carly",
-      yearOfBirth: 1942,
-      yearOfDeath: 1970,
-    },
-    {
-      name: "Ray",
-      yearOfBirth: 1962,
-      yearOfDeath: 2011,
-    },
-    {
-      name: "Jane",
-      yearOfBirth: 1912,
-      yearOfDeath: 1941,
-    },
-  ];
-
 const findTheOldest = function(arr) {
-    arr.map(person => {
-        if(!("yearOfDeath" in person))person.age = new Date().getFullYear() - person.yearOfBirth;
-        else person.age = person.yearOfDeath - person.yearOfBirth;
-    });
+  currentYear = (new Date()).getFullYear();
 
-    return arr.reduce((oldest,currentPerson) => {return oldest.age < currentPerson.age ? currentPerson : oldest});
+  for(let i=0; i < arr.length; i++) {
+
+    (!('yearOfDeath' in arr[i])) ? arr[i].age = (currentYear - arr[i].yearOfBirth) :
+    arr[i].age = arr[i].yearOfDeath - arr[i].yearOfBirth;
+
+  };
+
+  return arr.reduce((oldestPerson, currentPerson) => {
+    if (currentPerson.age > oldestPerson.age) return currentPerson
+    else return oldestPerson;
+  });
+
+  
 };
 
-// console.log(findTheOldest(people));
 
-
-let arr = [5, 6, "hello", "you", 5, true];
-
-// let newArr = arr.slice(2,4);
-
-let newArr = arr.splice(1,3)
-
-console.log(newArr, arr);
-
-
-
-// Do not edit below this line
-// module.exports = findTheOldest; 
+// // Do not edit below this line
+module.exports = findTheOldest; 
